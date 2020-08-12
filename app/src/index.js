@@ -8,7 +8,7 @@ import thunk from 'redux-thunk'
 import './index.css';
 
 import App from './App';
-import reducer from './reducers'
+import {reducer } from './reducers'
 
 
 import * as serviceWorker from './serviceWorker';
