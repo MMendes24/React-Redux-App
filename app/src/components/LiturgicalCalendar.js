@@ -3,13 +3,24 @@ import { connect } from 'react-redux'
 
 import { fetchCalendar } from '../actions'
 
+import { Date } from './Date'
+
 const LiturgicalCalendar = (props) => {
     useEffect( () => {
         props.fetchCalendar()
     }, [])
 
     return (
-        <h1>Liturgical Calendar</h1>
+        <div>
+            <h1>Liturgical Calendar</h1>
+            {props.data.map(item => {
+                console.log(item.celebrations)
+                return <div>
+                    <Date main={item} celebrations={props.data.celebrations}/>
+                </div>
+            })}
+        </div>
+        
     )
 }
 
