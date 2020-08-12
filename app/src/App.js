@@ -1,13 +1,13 @@
 import React from 'react';
 
-import LiturgicalCalendar from './components/LiturgicalCalendar'
+import { Calendar } from './components'
 
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <LiturgicalCalendar />
+      <Calendar />
     </div>
   );
 }
