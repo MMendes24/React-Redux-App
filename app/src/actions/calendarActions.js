@@ -9,7 +9,6 @@ export const fetchCalendar = () => (dispatch) => {
 
     axios.get('http://calapi.inadiutorium.cz/api/v0/en/calendars/default/2020/8')
     .then(res => {
-        console.log(res.data)
         dispatch({ type: FETCH_CALENDAR_SUCCESS, payload: res.data })
     })
     .catch(err => {

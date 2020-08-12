@@ -1,7 +1,7 @@
 import React from 'react'
 
+
 export const Date = (main) => {
-    console.log(main.main.celebrations)
     return (
     <section>
         <div className="heading-div">
@@ -10,9 +10,9 @@ export const Date = (main) => {
             <h4>Season Week: {main.main.season_week}</h4>
             <h3>Holy Days and Saints:&nbsp;</h3>
         </div>
-            {main.main.celebrations.map(celebration => {
+            {main.main.celebrations.map((celebration, index) => {
                 return (
-                    <div className="body-div">
+                    <div key={index} className="body-div">
                         <p>Name or Occasion: <br /> {celebration.title}</p>
                         <p>Sacred Color: {celebration.colour}</p>
                         <p>Rank: {celebration.rank}</p>

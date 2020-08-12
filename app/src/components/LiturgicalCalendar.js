@@ -13,11 +13,10 @@ const LiturgicalCalendar = (props) => {
     return (
         <div>
             <h1>Liturgical Calendar</h1>
-            {props.data.map(item => {
-                console.log(item.celebrations)
-                return <div>
-                    <Date main={item} celebrations={props.data.celebrations}/>
-                </div>
+            {props.data.map((item, index) => {
+                return (
+                    <Date key={index} main={item} />
+                )                    
             })}
         </div>
         
