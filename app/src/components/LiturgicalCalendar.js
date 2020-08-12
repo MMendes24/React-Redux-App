@@ -5,20 +5,22 @@ import { fetchCalendar } from '../actions'
 
 import { Date } from './Date'
 
+import { CalendarStyles } from '../styledComponents/Styles'
+
 const LiturgicalCalendar = (props) => {
     useEffect( () => {
         props.fetchCalendar()
     }, [])
 
     return (
-        <div>
-            <h1>Liturgical Calendar</h1>
+        <CalendarStyles>
+            <h2>{props.error}</h2>
             {props.data.map((item, index) => {
                 return (
                     <Date key={index} main={item} />
                 )                    
             })}
-        </div>
+        </CalendarStyles>
         
     )
 }

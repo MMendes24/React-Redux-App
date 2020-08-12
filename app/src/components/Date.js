@@ -1,14 +1,15 @@
 import React from 'react'
+import { DayStyles } from '../styledComponents/Styles'
 
 
 export const Date = (main) => {
     return (
-    <section>
+    <DayStyles>
         <div className="heading-div">
-            <h3>Date: {main.main.date}</h3>
-            <h4>Season: {main.main.season}</h4>
-            <h4>Season Week: {main.main.season_week}</h4>
-            <h3>Holy Days and Saints:&nbsp;</h3>
+            <h4>Date: {main.main.date}</h4>
+            <h5>Season: {main.main.season}</h5>
+            <h5>Season Week: {main.main.season_week}</h5>
+            <h4>Holy Days and Saints:&nbsp;</h4>
         </div>
             {main.main.celebrations.map((celebration, index) => {
                 return (
@@ -19,6 +20,6 @@ export const Date = (main) => {
                     </div>
                 )
             })}
-    </section>
+    </DayStyles>
     )
 }

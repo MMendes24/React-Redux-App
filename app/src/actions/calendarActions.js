@@ -2,6 +2,7 @@ import axios from 'axios'
 
 export const FETCH_CALENDAR = 'FETCH_CALENDAR'
 export const FETCH_CALENDAR_SUCCESS = 'FETCH_CALENDAR_SUCCESS'
+export const FETCH_CALENDAR_FAIL = 'FETCH_CALENDAR_FAIL'
 
 export const fetchCalendar = () => (dispatch) => {
 
@@ -12,6 +13,6 @@ export const fetchCalendar = () => (dispatch) => {
         dispatch({ type: FETCH_CALENDAR_SUCCESS, payload: res.data })
     })
     .catch(err => {
-        console.log("Not a chance, New Orleans!")
+        dispatch({ type: FETCH_CALENDAR_FAIL })
     })
 }

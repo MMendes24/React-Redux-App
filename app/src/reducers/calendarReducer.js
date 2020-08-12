@@ -1,4 +1,4 @@
-import { FETCH_CALENDAR, FETCH_CALENDAR_SUCCESS, FETCH_CALENDAR_FAILURE } from '../actions'
+import { FETCH_CALENDAR, FETCH_CALENDAR_SUCCESS, FETCH_CALENDAR_FAIL } from '../actions'
 
 const initialState = {
     //local data
@@ -25,6 +25,12 @@ export const calendarReducer = (state = initialState, action) => {
                 
                 //api data
                 data: action.payload,
+            }
+        case FETCH_CALENDAR_FAIL: 
+            return {
+                ...state,
+                isLoading: false,
+                error: "Failed to load, likely due to a failed API call"
             }
             default:
                 return state
