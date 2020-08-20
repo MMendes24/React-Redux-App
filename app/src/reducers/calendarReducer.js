@@ -15,7 +15,7 @@ export const calendarReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: true,
-                error: ''
+                error: '',
             }
         case FETCH_CALENDAR_SUCCESS:
             return {

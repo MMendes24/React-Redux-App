@@ -8,11 +8,14 @@ import { Date } from './Date'
 import { CalendarStyles } from '../styledComponents/Styles'
 
 const LiturgicalCalendar = (props) => {
+
     useEffect( () => {
+        console.log("props")
         props.fetchCalendar()
     }, [])
 
     return (
+    
         <CalendarStyles>
             <h2>{props.error}</h2>
             {props.data.map((item, index) => {
